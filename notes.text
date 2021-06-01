@@ -1,0 +1,2 @@
+Inside project file type: 
+json-server --watch db/db.json

@@ -1,0 +1,38 @@
+{
+  "block": [
+    {
+      "id": 1,
+      "blockId": "A",
+      "prisonerId": 1
+    },
+    {
+      "id": 2,
+      "blockId": "B",
+      "prisonerId": 2
+    }
+  ],
+  "prisoners": [
+    {
+      "id": 1,
+      "firstName": "Chris",
+      "lastName": "Advards",
+      "crimeType": "blackmail",
+      "goodBehaviour": true,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Black Mailer",
+      "crimeDetails": "Postman read peoples mail and blackmail them"
+    },
+    {
+      "id": 2,
+      "firstName": "Oliver",
+      "lastName": "Doe",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": true,
+      "gangMember": false,
+      "nickName": "Black Mailer",
+      "crimeDetails": "Postman read peoples mail and blackmail them"
+    }
+  ]
+}
