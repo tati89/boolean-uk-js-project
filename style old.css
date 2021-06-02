@@ -1,3 +1,35 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@sydneymurray
+tati89 /
+boolean-uk-js-project
+
+1
+0
+
+    0
+
+Code
+Issues
+Pull requests
+Actions
+Projects 1
+Wiki
+Security
+
+    Insights
+
+boolean-uk-js-project/style.css
+@tati89
+tati89 JSON PATCH is working
+Latest commit f6bd4f5 4 hours ago
+History
+1 contributor
+196 lines (168 sloc) 2.95 KB
 * {
   box-sizing: border-box;
 }
@@ -33,10 +65,15 @@ body {
 }
 
 .options-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 3ch;
+  justify-content: center;
 }
 
 .option-list-item {
+  display: grid;
+  justify-content: center;
   list-style: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -45,8 +82,6 @@ body {
   padding: 1.2ch;
   border-radius: 5px;
   font-size: 1.5rem;
-  display: inline-block;
-  margin: 3px;
 }
 
 .display-content {
@@ -192,19 +227,17 @@ footer {
   padding-left: 100px;
 }
 
-@media screen and (max-width: 780px) {
-  .hero-img {
-    width: 400px;
-  }
-  .signature {
-    padding-left: 0px;
-  }
-  footer {
-    grid-template-columns: repeat(1, auto);
-    justify-items: left;
-    padding-left: 150px;
-  }
-  .form-article {
-    margin-left: -70px;
-  }
-}
+    © 2021 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
