@@ -60,8 +60,8 @@ function renderPrisoner(prisoner) {
   prisonerArticle.append(btnWrapper);
 
   const editBtn = document.createElement("button");
-  editBtn.setAttribute("class", "delete-btn");
-  editBtn.innerText = "EDIT";
+  editBtn.setAttribute("class", "edit-btn");
+  editBtn.innerText = "E D I T";
   btnWrapper.append(editBtn);
 
   editBtn.addEventListener("click", function () {
@@ -153,7 +153,7 @@ function editPrisonerForm(prisoner) {
   divEl.append(checkBoxInputEl);
 
   const checkBoxLabel = document.createElement("label");
-  checkBoxLabel.setAttribute("for", "block-checkbox checkbox-label");
+  checkBoxLabel.setAttribute("for", "checkbox-label");
   checkBoxLabel.innerText = "Good Behaviour";
   divEl.append(checkBoxLabel);
 
@@ -166,7 +166,7 @@ function editPrisonerForm(prisoner) {
   divEl.append(paroleCheckBoxEl);
 
   const paroleCheckBoxLabel = document.createElement("label");
-  paroleCheckBoxLabel.setAttribute("for", "parole-checkbox checkbox-label");
+  paroleCheckBoxLabel.setAttribute("for", "checkbox-label");
   paroleCheckBoxLabel.innerText = "Parole";
   divEl.append(paroleCheckBoxLabel);
 
@@ -202,7 +202,8 @@ function editPrisonerForm(prisoner) {
 
   //crime details input and label
   const crimeDetails = document.createElement("label");
-  crimeDetails.setAttribute("for", "crime-details-input");
+  crimeDetails.setAttribute("for", "crime-details-label");
+  crimeDetails.setAttribute("class", "crime-details-label");
   crimeDetails.innerText = "Crime details:";
   form.append(crimeDetails);
 
@@ -210,12 +211,13 @@ function editPrisonerForm(prisoner) {
   crimeDetailsInput.setAttribute("class", "crime-details-input");
   crimeDetailsInput.setAttribute("id", "crime-details-input");
   crimeDetailsInput.setAttribute("type", "text");
-  crimeDetailsInput.setAttribute("value", prisoner.crimeDetails);
+  crimeDetailsInput.innerText = prisoner.crimeDetails;
   form.append(crimeDetailsInput);
 
   //picture
   const pictureLabel = document.createElement("label");
-  pictureLabel.setAttribute("for", "picture-label");
+  pictureLabel.setAttribute("for", "picture-input");
+  pictureLabel.setAttribute("class", "picture-label");
   pictureLabel.innerText = "Picture:";
   form.append(pictureLabel);
 
@@ -223,6 +225,7 @@ function editPrisonerForm(prisoner) {
   pictureInput.setAttribute("class", "picture-input");
   pictureInput.setAttribute("id", "picture-input");
   pictureInput.setAttribute("type", "url");
+  pictureInput.setAttribute("value", prisoner.picture);
   form.append(pictureInput);
 
   //block Cell input + label inside div
@@ -241,6 +244,25 @@ function editPrisonerForm(prisoner) {
   blockcellInput.setAttribute("type", "text");
   blockcellInput.setAttribute("value", prisoner.blockCell);
   blockCellDiv.append(blockcellInput);
+
+  //div with submit and delete button
+  const buttonDiv = document.createElement("div");
+  buttonDiv.setAttribute("class", "button-div");
+  form.append(buttonDiv);
+
+  //submit button
+  const submitBtn = document.createElement("button");
+  submitBtn.setAttribute("class", "submit-btn");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.innerText = "S A V E";
+  buttonDiv.append(submitBtn);
+
+  //delete button
+  const deleteBtn = document.createElement("button");
+  deleteBtn.setAttribute("class", "delete-btn");
+  deleteBtn.setAttribute("type", "submit");
+  deleteBtn.innerText = "D E L E T E";
+  buttonDiv.append(deleteBtn);
 }
 
 function retrieveData() {
