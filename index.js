@@ -85,41 +85,53 @@ function editPrisonerForm(prisoner) {
   h1El.innerText = "Edit Prisoner";
   form.append(h1El);
 
+  const firstNameDiv = document.createElement("div");
+  firstNameDiv.setAttribute("class", "first-name-div");
+  form.append(firstNameDiv);
+
   const firstNameLabel = document.createElement("label");
   firstNameLabel.setAttribute("for", "first-name-input");
   firstNameLabel.innerText = "First Name:";
-  form.append(firstNameLabel);
+  firstNameDiv.append(firstNameLabel);
 
   const firstNameInputEl = document.createElement("input");
   firstNameInputEl.setAttribute("class", "first-name-input");
   firstNameInputEl.setAttribute("id", "first-name-input");
   firstNameInputEl.setAttribute("type", "text");
   firstNameInputEl.setAttribute("value", prisoner.firstName);
-  form.append(firstNameInputEl);
+  firstNameDiv.append(firstNameInputEl);
+
+  const lastNameDiv = document.createElement("div");
+  lastNameDiv.setAttribute("class", "last-name-div");
+  form.append(lastNameDiv);
 
   const lastNameLabel = document.createElement("label");
   lastNameLabel.setAttribute("for", "last-name-input");
   lastNameLabel.innerText = "Last Name:";
-  form.append(lastNameLabel);
+  lastNameDiv.append(lastNameLabel);
 
   const lastNameInputEl = document.createElement("input");
   lastNameInputEl.setAttribute("class", "last-name-input");
   lastNameInputEl.setAttribute("id", "last-name-input");
   lastNameInputEl.setAttribute("type", "text");
   lastNameInputEl.setAttribute("value", prisoner.lastName);
-  form.append(lastNameInputEl);
+  lastNameDiv.append(lastNameInputEl);
+
+  const crimeTypeDiv = document.createElement("div");
+  crimeTypeDiv.setAttribute("class", "crime-type-div");
+  form.append(crimeTypeDiv);
 
   const crimeType = document.createElement("label");
   crimeType.setAttribute("for", "street-input");
   crimeType.innerText = "Crime Type:";
-  form.append(crimeType);
+  crimeTypeDiv.append(crimeType);
 
   const crimeTypeInput = document.createElement("input");
   crimeTypeInput.setAttribute("class", "street-input");
   crimeTypeInput.setAttribute("id", "street-input");
   crimeTypeInput.setAttribute("type", "text");
   crimeTypeInput.setAttribute("value", prisoner.crimeType);
-  form.append(crimeTypeInput);
+  crimeTypeDiv.append(crimeTypeInput);
 
   const divEl = document.createElement("div");
   divEl.setAttribute("class", "checkbox-section");
@@ -129,14 +141,25 @@ function editPrisonerForm(prisoner) {
   checkBoxInputEl.setAttribute("class", "good-behaviour-checkbox");
   checkBoxInputEl.setAttribute("id", "good-behaviour-checkbox");
   checkBoxInputEl.setAttribute("type", "checkbox");
-  checkBoxInputEl.setAttribute("checked", prisoner.goodBehaviour);
-  console.log(prisoner.goodBehaviour);
+  checkBoxInputEl.checked = prisoner.goodBehaviour;
   divEl.append(checkBoxInputEl);
 
   const checkBoxLabel = document.createElement("label");
   checkBoxLabel.setAttribute("for", "block-checkbox");
   checkBoxLabel.innerText = "Good Behaviour";
   divEl.append(checkBoxLabel);
+
+  const paroleCheckBoxEl = document.createElement("input");
+  paroleCheckBoxEl.setAttribute("class", "parole-checkbox");
+  paroleCheckBoxEl.setAttribute("id", "parole-checkbox");
+  paroleCheckBoxEl.setAttribute("type", "checkbox");
+  paroleCheckBoxEl.checked = prisoner.parole;
+  divEl.append(paroleCheckBoxEl);
+
+  const paroleCheckBoxLabel = document.createElement("label");
+  paroleCheckBoxLabel.setAttribute("for", "partole-checkbox");
+  paroleCheckBoxLabel.innerText = "Parole";
+  divEl.append(paroleCheckBoxLabel);
 }
 
 function retrieveData() {

@@ -9,6 +9,46 @@
       "id": 2,
       "blockId": "B",
       "prisonerId": 2
+    },
+    {
+      "id": 3,
+      "blockId": "B",
+      "prisonerId": 3
+    },
+    {
+      "id": 4,
+      "blockId": "C",
+      "prisonerId": 4
+    },
+    {
+      "id": 5,
+      "blockId": "C",
+      "prisonerId": 5
+    },
+    {
+      "id": 6,
+      "blockId": "A",
+      "prisonerId": 6
+    },
+    {
+      "id": 7,
+      "blockId": "D",
+      "prisonerId": 7
+    },
+    {
+      "id": 8,
+      "blockId": "B",
+      "prisonerId": 8
+    },
+    {
+      "id": 9,
+      "blockId": "A",
+      "prisonerId": 9
+    },
+    {
+      "id": 10,
+      "blockId": "C",
+      "prisonerId": 10
     }
   ],
   "prisoners": [
@@ -21,7 +61,9 @@
       "parole": false,
       "gangMember": true,
       "nickName": "Black Mailer",
-      "crimeDetails": "Postman read peoples mail and blackmail them"
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-1.jpeg",
+      "blockCell": 101
     },
     {
       "id": 2,
@@ -31,8 +73,114 @@
       "goodBehaviour": false,
       "parole": true,
       "gangMember": false,
-      "nickName": "Black Mailer",
-      "crimeDetails": "Postman read peoples mail and blackmail them"
+      "nickName": "Teacup",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-2.jpeg",
+      "blockCell": 102
+    },
+    {
+      "id": 3,
+      "firstName": "Johny",
+      "lastName": "Archer",
+      "crimeType": "cyber crime",
+      "goodBehaviour": true,
+      "parole": false,
+      "gangMember": false,
+      "nickName": "Scout",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-3.jpeg",
+      "blockCell": 103
+    },
+    {
+      "id": 4,
+      "firstName": "Nick",
+      "lastName": "Bowman",
+      "crimeType": "fraud",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Kiddo",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-4.jpeg",
+      "blockCell": 104
+    },
+    {
+      "id": 5,
+      "firstName": "Alan",
+      "lastName": "Zorg",
+      "crimeType": "burglary",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Shortie",
+      "crimeDetails": "Stole toys from all the neighborhood kids",
+      "picture": "assets/prisoner-img/prisoner-5.jpeg",
+      "blockCell": 105
+    },
+    {
+      "id": 6,
+      "firstName": "Denis",
+      "lastName": "Glow",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Smarty",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-6.jpeg",
+      "blockCell": 106
+    },
+    {
+      "id": 7,
+      "firstName": "Denis",
+      "lastName": "Glow",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Smarty",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-7.jpeg",
+      "blockCell": 107
+    },
+    {
+      "id": 8,
+      "firstName": "Denis",
+      "lastName": "Glow",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Smarty",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-8.jpeg",
+      "blockCell": 108
+    },
+    {
+      "id": 9,
+      "firstName": "Chandler",
+      "lastName": "Perry",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Smarty",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-9.jpeg",
+      "blockCell": 109
+    },
+    {
+      "id": 10,
+      "firstName": "lola",
+      "lastName": "Richie",
+      "crimeType": "blackmail",
+      "goodBehaviour": false,
+      "parole": false,
+      "gangMember": true,
+      "nickName": "Boomer",
+      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "picture": "assets/prisoner-img/prisoner-10.jpeg",
+      "blockCell": 110
     }
   ]
 }

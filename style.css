@@ -3,8 +3,9 @@
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 .main-h1 {
@@ -55,11 +56,65 @@ body {
   display: grid;
   grid-gap: 20px;
   justify-content: center;
-  grid-auto-flow: column;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
 
 .prisoner-article {
+  display: grid;
   border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 225px;
+}
+
+.prisoner-title {
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+}
+
+.prisoner-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.crime-title {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.crime-type {
+  text-align: center;
+  padding: 7px;
+  margin: 0;
+}
+
+.block-sell {
+  margin-top: 10px;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.delete-btn {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.form-article {
+  width: 500px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid black;
+}
+
+.edit-form {
+  display: grid;
 }
