@@ -65,6 +65,7 @@ function renderPrisoner(prisoner) {
   btnWrapper.append(editBtn);
 
   editBtn.addEventListener("click", function () {
+    state.prisoner = prisoner;
     editPrisonerForm(prisoner);
   });
 }
@@ -256,6 +257,28 @@ function editPrisonerForm(prisoner) {
   submitBtn.setAttribute("type", "submit");
   submitBtn.innerText = "S A V E";
   buttonDiv.append(submitBtn);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    updatePrisonerArray();
+  });
+
+  function updatePrisonerArray() {
+    const prisonerToUpdate = state.prisoners.findIndex(function (inmate) {
+      return inmate.id === prisoner.id;
+    });
+    console.log(state.prisoners[prisonerToUpdate]);
+    state.prisoners[prisonerToUpdate].firstName = "Bla";
+    // state.prisoners[prisonerToUpdate].lastName;
+    // state.prisoners[prisonerToUpdate].crimeType;
+    // state.prisoners[prisonerToUpdate].goodBehaviour;
+    // state.prisoners[prisonerToUpdate].parole;
+    // state.prisoners[prisonerToUpdate].gangMember;
+    // state.prisoners[prisonerToUpdate].nickName;
+    // state.prisoners[prisonerToUpdate].crimeDetails;
+    // state.prisoners[prisonerToUpdate].picture;
+    // state.prisoners[prisonerToUpdate].blockCell;
+  }
 
   //delete button
   const deleteBtn = document.createElement("button");
