@@ -77,14 +77,18 @@ function editPrisonerForm(prisoner) {
   formArticle.setAttribute("class", "form-article");
   displayContent.append(formArticle);
 
+  //Form
   const form = document.createElement("form");
   form.setAttribute("class", "edit-form");
   formArticle.append(form);
 
+  //Edit prisoner h1
   const h1El = document.createElement("h1");
+  h1El.setAttribute("class", "form-title");
   h1El.innerText = "Edit Prisoner";
   form.append(h1El);
 
+  //First name label + input inside div
   const firstNameDiv = document.createElement("div");
   firstNameDiv.setAttribute("class", "first-name-div");
   form.append(firstNameDiv);
@@ -101,6 +105,7 @@ function editPrisonerForm(prisoner) {
   firstNameInputEl.setAttribute("value", prisoner.firstName);
   firstNameDiv.append(firstNameInputEl);
 
+  //last name label + input inside div
   const lastNameDiv = document.createElement("div");
   lastNameDiv.setAttribute("class", "last-name-div");
   form.append(lastNameDiv);
@@ -117,6 +122,7 @@ function editPrisonerForm(prisoner) {
   lastNameInputEl.setAttribute("value", prisoner.lastName);
   lastNameDiv.append(lastNameInputEl);
 
+  //crime label + input inside div
   const crimeTypeDiv = document.createElement("div");
   crimeTypeDiv.setAttribute("class", "crime-type-div");
   form.append(crimeTypeDiv);
@@ -133,10 +139,12 @@ function editPrisonerForm(prisoner) {
   crimeTypeInput.setAttribute("value", prisoner.crimeType);
   crimeTypeDiv.append(crimeTypeInput);
 
+  //checkboxes
   const divEl = document.createElement("div");
   divEl.setAttribute("class", "checkbox-section");
   form.append(divEl);
 
+  //Good Behaviour
   const checkBoxInputEl = document.createElement("input");
   checkBoxInputEl.setAttribute("class", "good-behaviour-checkbox");
   checkBoxInputEl.setAttribute("id", "good-behaviour-checkbox");
@@ -145,10 +153,11 @@ function editPrisonerForm(prisoner) {
   divEl.append(checkBoxInputEl);
 
   const checkBoxLabel = document.createElement("label");
-  checkBoxLabel.setAttribute("for", "block-checkbox");
+  checkBoxLabel.setAttribute("for", "block-checkbox checkbox-label");
   checkBoxLabel.innerText = "Good Behaviour";
   divEl.append(checkBoxLabel);
 
+  //Parole
   const paroleCheckBoxEl = document.createElement("input");
   paroleCheckBoxEl.setAttribute("class", "parole-checkbox");
   paroleCheckBoxEl.setAttribute("id", "parole-checkbox");
@@ -157,9 +166,81 @@ function editPrisonerForm(prisoner) {
   divEl.append(paroleCheckBoxEl);
 
   const paroleCheckBoxLabel = document.createElement("label");
-  paroleCheckBoxLabel.setAttribute("for", "partole-checkbox");
+  paroleCheckBoxLabel.setAttribute("for", "parole-checkbox checkbox-label");
   paroleCheckBoxLabel.innerText = "Parole";
   divEl.append(paroleCheckBoxLabel);
+
+  //Gang Member
+  const gangMemberCheckBox = document.createElement("input");
+  gangMemberCheckBox.setAttribute("class", "gang-member-checkbox");
+  gangMemberCheckBox.setAttribute("id", "gang-member-checkbox");
+  gangMemberCheckBox.setAttribute("type", "checkbox");
+  gangMemberCheckBox.checked = prisoner.gangMember;
+  divEl.append(gangMemberCheckBox);
+
+  const gangMemberLabel = document.createElement("label");
+  gangMemberLabel.setAttribute("for", "checkbox-label");
+  gangMemberLabel.innerText = "Gang Member";
+  divEl.append(gangMemberLabel);
+
+  //Nick name label + input inside div
+  const nickNameDiv = document.createElement("div");
+  nickNameDiv.setAttribute("class", "nick-name-div");
+  form.append(nickNameDiv);
+
+  const nickName = document.createElement("label");
+  nickName.setAttribute("for", "nick-name-input");
+  nickName.innerText = "Nick name:";
+  nickNameDiv.append(nickName);
+
+  const nickNameInput = document.createElement("input");
+  nickNameInput.setAttribute("class", "nick-name-input");
+  nickNameInput.setAttribute("id", "nick-name-input");
+  nickNameInput.setAttribute("type", "text");
+  nickNameInput.setAttribute("value", prisoner.nickName);
+  nickNameDiv.append(nickNameInput);
+
+  //crime details input and label
+  const crimeDetails = document.createElement("label");
+  crimeDetails.setAttribute("for", "crime-details-input");
+  crimeDetails.innerText = "Crime details:";
+  form.append(crimeDetails);
+
+  const crimeDetailsInput = document.createElement("textarea");
+  crimeDetailsInput.setAttribute("class", "crime-details-input");
+  crimeDetailsInput.setAttribute("id", "crime-details-input");
+  crimeDetailsInput.setAttribute("type", "text");
+  crimeDetailsInput.setAttribute("value", prisoner.crimeDetails);
+  form.append(crimeDetailsInput);
+
+  //picture
+  const pictureLabel = document.createElement("label");
+  pictureLabel.setAttribute("for", "picture-label");
+  pictureLabel.innerText = "Picture:";
+  form.append(pictureLabel);
+
+  const pictureInput = document.createElement("input");
+  pictureInput.setAttribute("class", "picture-input");
+  pictureInput.setAttribute("id", "picture-input");
+  pictureInput.setAttribute("type", "url");
+  form.append(pictureInput);
+
+  //block Cell input + label inside div
+  const blockCellDiv = document.createElement("div");
+  blockCellDiv.setAttribute("class", "block-cell-div");
+  form.append(blockCellDiv);
+
+  const blockCellLabel = document.createElement("label");
+  blockCellLabel.setAttribute("for", "block-cell-label");
+  blockCellLabel.innerText = "Block Cell:";
+  blockCellDiv.append(blockCellLabel);
+
+  const blockcellInput = document.createElement("input");
+  blockcellInput.setAttribute("class", "block-cell-input");
+  blockcellInput.setAttribute("id", "block-cell-input");
+  blockcellInput.setAttribute("type", "text");
+  blockcellInput.setAttribute("value", prisoner.blockCell);
+  blockCellDiv.append(blockcellInput);
 }
 
 function retrieveData() {
