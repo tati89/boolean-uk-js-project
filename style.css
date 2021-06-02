@@ -69,7 +69,7 @@ body {
   padding-right: 10px;
   padding-bottom: 10px;
   width: 225px;
-  background-color: rgb(231, 226, 226);
+  background-color: rgb(236, 236, 236);
 }
 
 .prisoner-title {
@@ -109,6 +109,7 @@ body {
   background-color: #d4d2d2;
 }
 
+/* Form Article */
 .form-article {
   width: 500px;
   margin-top: 10px;
@@ -116,8 +117,9 @@ body {
   margin-left: auto;
   border: 1px solid black;
   padding: 10px;
+  background-color: rgb(236, 236, 236);
 }
-
+/* Form starts */
 .edit-form {
   display: grid;
   grid-gap: 15px;

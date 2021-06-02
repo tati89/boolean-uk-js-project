@@ -260,24 +260,45 @@ function editPrisonerForm(prisoner) {
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    updatePrisonerArray();
+    updatePrisoner();
   });
 
-  function updatePrisonerArray() {
+  //Update Array and JSON
+  function updatePrisoner() {
     const prisonerToUpdate = state.prisoners.findIndex(function (inmate) {
       return inmate.id === prisoner.id;
     });
+
+    state.prisoners[prisonerToUpdate].firstName = firstNameInputEl.value;
+    state.prisoners[prisonerToUpdate].lastName = lastNameInputEl.value;
+    state.prisoners[prisonerToUpdate].crimeType = crimeTypeInput.value;
+    state.prisoners[prisonerToUpdate].goodBehaviour = checkBoxInputEl.checked;
+    state.prisoners[prisonerToUpdate].parole = paroleCheckBoxEl.checked;
+    state.prisoners[prisonerToUpdate].gangMember = gangMemberCheckBox.checked;
+    state.prisoners[prisonerToUpdate].nickName = nickNameInput.value;
+    state.prisoners[prisonerToUpdate].crimeDetails = crimeDetailsInput.value;
+    state.prisoners[prisonerToUpdate].picture = pictureInput.value;
+    state.prisoners[prisonerToUpdate].blockCell = blockcellInput.value;
     console.log(state.prisoners[prisonerToUpdate]);
-    state.prisoners[prisonerToUpdate].firstName = "Bla";
-    // state.prisoners[prisonerToUpdate].lastName;
-    // state.prisoners[prisonerToUpdate].crimeType;
-    // state.prisoners[prisonerToUpdate].goodBehaviour;
-    // state.prisoners[prisonerToUpdate].parole;
-    // state.prisoners[prisonerToUpdate].gangMember;
-    // state.prisoners[prisonerToUpdate].nickName;
-    // state.prisoners[prisonerToUpdate].crimeDetails;
-    // state.prisoners[prisonerToUpdate].picture;
-    // state.prisoners[prisonerToUpdate].blockCell;
+
+    fetch(`http://localhost:3000/prisoners/${prisoner.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName: state.prisoners[prisonerToUpdate].firstName,
+        lastName: state.prisoners[prisonerToUpdate].lastName,
+        crimeType: state.prisoners[prisonerToUpdate].crimeType,
+        goodBehaviour: state.prisoners[prisonerToUpdate].goodBehaviour,
+        parole: state.prisoners[prisonerToUpdate].parole,
+        gangMember: state.prisoners[prisonerToUpdate].gangMember,
+        nickName: state.prisoners[prisonerToUpdate].nickName,
+        crimeDetails: state.prisoners[prisonerToUpdate].crimeDetails,
+        picture: state.prisoners[prisonerToUpdate].picture,
+        blockCell: state.prisoners[prisonerToUpdate].blockCell,
+      }),
+    });
   }
 
   //delete button
