@@ -61,6 +61,7 @@ body {
   margin-right: 7rem;
 }
 
+/* Prisoner Articke */
 .prisoner-article {
   display: grid;
   border: 1px solid black;
@@ -68,6 +69,7 @@ body {
   padding-right: 10px;
   padding-bottom: 10px;
   width: 225px;
+  background-color: rgb(231, 226, 226);
 }
 
 .prisoner-title {
@@ -104,6 +106,7 @@ body {
 .edit-btn {
   padding: 3px 30px 3px 30px;
   margin-top: 10px;
+  background-color: #d4d2d2;
 }
 
 .form-article {
@@ -176,4 +179,16 @@ label {
 .delete-btn {
   justify-self: left;
   background-color: rgb(197, 73, 73);
+}
+
+footer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: lightgray;
+}
+
+.signature {
+  align-content: center;
+  padding-left: 100px;
 }

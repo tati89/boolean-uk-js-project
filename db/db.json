@@ -12,32 +12,32 @@
     },
     {
       "id": 3,
-      "blockId": "B",
+      "blockId": "C",
       "prisonerId": 3
     },
     {
       "id": 4,
-      "blockId": "C",
+      "blockId": "D",
       "prisonerId": 4
     },
     {
       "id": 5,
-      "blockId": "C",
+      "blockId": "A",
       "prisonerId": 5
     },
     {
       "id": 6,
-      "blockId": "A",
+      "blockId": "B",
       "prisonerId": 6
     },
     {
       "id": 7,
-      "blockId": "D",
+      "blockId": "C",
       "prisonerId": 7
     },
     {
       "id": 8,
-      "blockId": "B",
+      "blockId": "D",
       "prisonerId": 8
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": 10,
-      "blockId": "C",
+      "blockId": "B",
       "prisonerId": 10
     }
   ],

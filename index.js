@@ -224,7 +224,7 @@ function editPrisonerForm(prisoner) {
   const pictureInput = document.createElement("input");
   pictureInput.setAttribute("class", "picture-input");
   pictureInput.setAttribute("id", "picture-input");
-  pictureInput.setAttribute("type", "url");
+  pictureInput.setAttribute("type", "text");
   pictureInput.setAttribute("value", prisoner.picture);
   form.append(pictureInput);
 
@@ -261,7 +261,7 @@ function editPrisonerForm(prisoner) {
   const deleteBtn = document.createElement("button");
   deleteBtn.setAttribute("class", "delete-btn");
   deleteBtn.setAttribute("type", "submit");
-  deleteBtn.innerText = "D E L E T E";
+  deleteBtn.innerText = "D I S C H A R G E";
   buttonDiv.append(deleteBtn);
 }
 
