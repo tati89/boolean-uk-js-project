@@ -10,6 +10,7 @@ function renderPrisoners() {
   });
 }
 
+// RENDER PRISONER LIST
 function renderPrisonerList() {
   const displayContent = document.querySelector(".display-content");
   displayContent.innerHTML = "";
@@ -18,6 +19,7 @@ function renderPrisonerList() {
   }
 }
 
+// RENDER PRISONER
 function renderPrisoner(prisoner) {
   const displayContent = document.querySelector(".display-content");
   const prisonerArticle = document.createElement("article");
@@ -70,6 +72,7 @@ function renderPrisoner(prisoner) {
   });
 }
 
+// RENDER PRISON EDIT FORM
 function editPrisonerForm(prisoner) {
   const displayContent = document.querySelector(".display-content");
   displayContent.innerHTML = "";
@@ -268,7 +271,6 @@ function editPrisonerForm(prisoner) {
     const prisonerToUpdate = state.prisoners.findIndex(function (inmate) {
       return inmate.id === prisoner.id;
     });
-
     state.prisoners[prisonerToUpdate].firstName = firstNameInputEl.value;
     state.prisoners[prisonerToUpdate].lastName = lastNameInputEl.value;
     state.prisoners[prisonerToUpdate].crimeType = crimeTypeInput.value;
@@ -309,6 +311,7 @@ function editPrisonerForm(prisoner) {
   buttonDiv.append(deleteBtn);
 }
 
+// RETREIVE DATA FROM LOCAL JSON SERVER
 function retrieveData() {
   fetch("http://localhost:3000/prisoners")
     .then(function (response) {
@@ -320,9 +323,13 @@ function retrieveData() {
     });
 }
 
+//CREATE EVENT LISTENERS FOR MAIN MENU BUTTONS
 function createEventListeners() {
   renderPrisoners();
 }
+
+/////////////////////////////////////////////////////////////////////
+// MAIN PROGRAM STARTS HERE
 
 retrieveData();
 createEventListeners();

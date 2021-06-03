@@ -54,7 +54,7 @@
   "prisoners": [
     {
       "id": 1,
-      "firstName": "Roland",
+      "firstName": "Eddy",
       "lastName": "Jacobs",
       "crimeType": "fraud",
       "goodBehaviour": true,
