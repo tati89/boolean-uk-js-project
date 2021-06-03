@@ -1,5 +1,8 @@
 let state = [];
 state.crimeType = null;
+state.gangMember = null;
+state.parole = null;
+state.goodBehaviour = null;
 function displayPrisoner() {}
 
 function renderPrisoners() {
@@ -14,18 +17,31 @@ function renderPrisoners() {
 function renderPrisonerList() {
   const displayContent = document.querySelector(".display-content");
   displayContent.innerHTML = "";
-  for (const prisoner of state.prisoners) {
-    renderPrisoner(prisoner);
+
+  for (let i = 0; i < state.prisoners.length; i++) {
+    let prisoner = state.prisoners[i];
+    let index = [i];
+
+    renderPrisoner(prisoner, index);
   }
+  state.gangMember = null;
+  state.parole = null;
+  state.goodBehaviour = null;
+  state.crimeType = null;
 }
 
 // RENDER PRISONER
-function renderPrisoner(prisoner) {
+function renderPrisoner(prisoner, index) {
   if (
     state.crimeType !== null &&
     state.crimeType !== prisoner.crimeType.toUpperCase()
   )
     return;
+  if (state.gangMember !== null && prisoner.gangMember === false) return;
+
+  if (state.parole !== null && prisoner.parole === false) return;
+
+  if (state.goodBehaviour !== null && prisoner.goodBehaviour === false) return;
 
   const displayContent = document.querySelector(".display-content");
   const prisonerArticle = document.createElement("article");
@@ -60,7 +76,7 @@ function renderPrisoner(prisoner) {
 
   const blockCell = document.createElement("span");
   blockCell.setAttribute("class", "block-sell");
-  blockCell.innerText = `Block ${state.block[0].blockId} Cell: ${prisoner.blockCell}`;
+  blockCell.innerText = `Block ${state.block[index].blockId} Cell: ${prisoner.blockCell}`;
   prisonerArticle.append(blockCell);
 
   const btnWrapper = document.createElement("div");
@@ -616,6 +632,42 @@ function renderAdmissionForm() {
   });
 }
 
+function renderGangMembers() {
+  let contentSection = document.querySelector(".display-content");
+  contentSection.innerHTML = "";
+
+  const gangMember = document.querySelector(".gang-members-li");
+
+  gangMember.addEventListener("click", function () {
+    state.gangMember = true;
+    renderPrisonerList();
+  });
+}
+
+function renderEligibleForParole() {
+  let contentSection = document.querySelector(".display-content");
+  contentSection.innerHTML = "";
+
+  const parole = document.querySelector(".paroles-li");
+
+  parole.addEventListener("click", function () {
+    state.parole = true;
+    renderPrisonerList();
+  });
+}
+
+function renderGoodBehaviourList() {
+  let contentSection = document.querySelector(".display-content");
+  contentSection.innerHTML = "";
+
+  const goodBehaviour = document.querySelector(".good-behaviour-li");
+
+  goodBehaviour.addEventListener("click", function () {
+    state.goodBehaviour = true;
+    renderPrisonerList();
+  });
+}
+
 // RETREIVE DATA FROM LOCAL JSON SERVER
 function retrieveData() {
   fetch("http://localhost:3000/prisoners")
@@ -641,6 +693,9 @@ function retrieveData() {
 function createEventListeners() {
   renderPrisoners();
   renderAdmission();
+  renderGangMembers();
+  renderEligibleForParole();
+  renderGoodBehaviourList();
 }
 
 /////////////////////////////////////////////////////////////////////
