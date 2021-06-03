@@ -54,16 +54,16 @@
   "prisoners": [
     {
       "id": 1,
-      "firstName": "Chris",
-      "lastName": "Advards",
-      "crimeType": "blackmail",
+      "firstName": "Roland",
+      "lastName": "Jacobs",
+      "crimeType": "fraud",
       "goodBehaviour": true,
       "parole": false,
       "gangMember": true,
-      "nickName": "Black Mailer",
-      "crimeDetails": "Postman read peoples mail and blackmail them",
+      "nickName": "Frauder",
+      "crimeDetails": "Stealing money!",
       "picture": "assets/prisoner-img/prisoner-1.jpeg",
-      "blockCell": 101
+      "blockCell": "10000"
     },
     {
       "id": 2,
