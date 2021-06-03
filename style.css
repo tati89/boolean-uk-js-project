@@ -35,7 +35,7 @@ body {
 .options-list {
   grid-gap: 3ch;
 }
-
+.crimes-list-item,
 .option-list-item {
   list-style: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -49,6 +49,17 @@ body {
   margin: 3px;
 }
 
+.crimes-list-item {
+  font-size: 0.9rem;
+  padding: 0.8ch;
+  margin-right: 1ch;
+  margin-left: 1ch;
+  font-weight: bold;
+}
+.crimes-list {
+  margin-left: auto;
+  margin-right: auto;
+}
 .display-content {
   display: grid;
   grid-gap: 20px;
@@ -178,6 +189,14 @@ label {
 .delete-btn {
   justify-self: left;
   background-color: rgb(197, 73, 73);
+}
+
+.admission-btn {
+  justify-content: center;
+  padding: 3px 30px 3px 30px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  background-color: #d4d2d2;
 }
 
 footer {
