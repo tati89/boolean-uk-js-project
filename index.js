@@ -17,13 +17,14 @@ function renderPrisoners() {
 // RENDER PRISONER LIST
 function renderPrisonerList() {
   const displayContent = document.querySelector(".display-content");
-  displayContent.setAttribute("class","display-content");
+  displayContent.setAttribute("class", "display-content");
 
   displayContent.innerHTML = "";
 
   for (let i = 0; i < state.prisoners.length; i++) {
     let prisoner = state.prisoners[i];
     let index = [i];
+    console.log(index);
 
     renderPrisoner(prisoner, index);
   }
@@ -99,8 +100,12 @@ function renderPrisoner(prisoner, index) {
 
 // RENDER PRISONER EDIT FORM
 function editPrisonerForm(prisoner) {
+  console.log(prisoner);
   const displayContent = document.querySelector(".display-content");
-  displayContent.setAttribute("class","display-content display-content-admin-form");
+  displayContent.setAttribute(
+    "class",
+    "display-content display-content-admin-form"
+  );
   displayContent.innerHTML = "";
 
   const formArticle = document.createElement("article");
@@ -272,7 +277,10 @@ function editPrisonerForm(prisoner) {
   blockInput.setAttribute("class", "block-cell-input");
   blockInput.setAttribute("id", "block-cell-input");
   blockInput.setAttribute("type", "text");
-  blockInput.setAttribute("value", "");
+  let blockIndex = state.block.findIndex(function (index) {
+    return prisoner.id === index.prisonerId;
+  });
+  blockInput.setAttribute("value", state.block[blockIndex].blockId);
   blockDiv.append(blockInput);
 
   //block Cell input + label inside div
@@ -391,7 +399,10 @@ function renderAdmission() {
 
 function renderAdmissionForm() {
   const displayContent = document.querySelector(".display-content");
-  displayContent.setAttribute("class","display-content display-content-admin-form");
+  displayContent.setAttribute(
+    "class",
+    "display-content display-content-admin-form"
+  );
   displayContent.innerHTML = "";
 
   const formArticle = document.createElement("article");

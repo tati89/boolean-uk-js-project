@@ -2,27 +2,27 @@
   "block": [
     {
       "id": 1,
-      "blockId": "",
+      "blockId": "A",
       "prisonerId": 1
     },
     {
       "id": 2,
-      "blockId": "",
+      "blockId": "B",
       "prisonerId": 2
     },
     {
       "id": 3,
-      "blockId": "",
+      "blockId": "C",
       "prisonerId": 3
     },
     {
       "id": 4,
-      "blockId": "",
+      "blockId": "A",
       "prisonerId": 4
     },
     {
       "id": 5,
-      "blockId": "",
+      "blockId": "B",
       "prisonerId": 5
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": 10,
-      "blockId": "",
+      "blockId": "D",
       "prisonerId": 10
     }
   ],
