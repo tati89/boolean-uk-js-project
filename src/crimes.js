@@ -15,7 +15,9 @@ function createButtonListener() {
 
 // RENDER BUTTON LIST OF CRIMES
 function renderCrimesButtonList() {
+  let menuSection = document.querySelector(".display-menu");
   let contentSection = document.querySelector(".display-content");
+  contentSection.setAttribute("class","display-content display-content-admin-form");
   contentSection.innerHTML = "";
   state.crimeType = null;
 

@@ -3,6 +3,7 @@ state.crimeType = null;
 state.gangMember = null;
 state.parole = null;
 state.goodBehaviour = null;
+
 function displayPrisoner() {}
 
 function renderPrisoners() {
@@ -16,6 +17,8 @@ function renderPrisoners() {
 // RENDER PRISONER LIST
 function renderPrisonerList() {
   const displayContent = document.querySelector(".display-content");
+  displayContent.setAttribute("class","display-content");
+
   displayContent.innerHTML = "";
 
   for (let i = 0; i < state.prisoners.length; i++) {
@@ -94,9 +97,10 @@ function renderPrisoner(prisoner, index) {
   });
 }
 
-// RENDER PRISON EDIT FORM
+// RENDER PRISONER EDIT FORM
 function editPrisonerForm(prisoner) {
   const displayContent = document.querySelector(".display-content");
+  displayContent.setAttribute("class","display-content display-content-admin-form");
   displayContent.innerHTML = "";
 
   const formArticle = document.createElement("article");
@@ -387,6 +391,7 @@ function renderAdmission() {
 
 function renderAdmissionForm() {
   const displayContent = document.querySelector(".display-content");
+  displayContent.setAttribute("class","display-content display-content-admin-form");
   displayContent.innerHTML = "";
 
   const formArticle = document.createElement("article");
@@ -401,7 +406,7 @@ function renderAdmissionForm() {
   //Edit prisoner h1
   const h1El = document.createElement("h1");
   h1El.setAttribute("class", "form-title");
-  h1El.innerText = "Edit Prisoner";
+  h1El.innerText = "Admit Prisoner";
   form.append(h1El);
 
   //First name label + input inside div

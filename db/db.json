@@ -2,27 +2,27 @@
   "block": [
     {
       "id": 1,
-      "blockId": "A",
+      "blockId": "",
       "prisonerId": 1
     },
     {
       "id": 2,
-      "blockId": "A",
+      "blockId": "",
       "prisonerId": 2
     },
     {
       "id": 3,
-      "blockId": "C",
+      "blockId": "",
       "prisonerId": 3
     },
     {
       "id": 4,
-      "blockId": "D",
+      "blockId": "",
       "prisonerId": 4
     },
     {
       "id": 5,
-      "blockId": "A",
+      "blockId": "",
       "prisonerId": 5
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": 10,
-      "blockId": "B",
+      "blockId": "",
       "prisonerId": 10
     }
   ],
@@ -67,12 +67,12 @@
     },
     {
       "id": 2,
-      "firstName": "Oliver",
+      "firstName": "Mark",
       "lastName": "Doe",
-      "crimeType": "cyber crime",
+      "crimeType": "Drug Dealing",
       "goodBehaviour": false,
-      "parole": true,
-      "gangMember": false,
+      "parole": false,
+      "gangMember": true,
       "nickName": "Teacup",
       "crimeDetails": "Stole credit card details from the bank's data",
       "picture": "assets/prisoner-img/prisoner-2.jpeg",
@@ -89,7 +89,7 @@
       "nickName": "Scout",
       "crimeDetails": "Stole data from the goverment",
       "picture": "assets/prisoner-img/prisoner-3.jpeg",
-      "blockCell": 103
+      "blockCell": "103"
     },
     {
       "id": 4,
@@ -102,7 +102,7 @@
       "nickName": "Kiddo",
       "crimeDetails": "Stole money from rich people",
       "picture": "assets/prisoner-img/prisoner-4.jpeg",
-      "blockCell": 104
+      "blockCell": "104"
     },
     {
       "id": 5,
@@ -115,7 +115,7 @@
       "nickName": "Shortie",
       "crimeDetails": "Stole toys from all the neighborhood kids",
       "picture": "assets/prisoner-img/prisoner-5.jpeg",
-      "blockCell": 105
+      "blockCell": "105"
     },
     {
       "id": 6,
@@ -174,13 +174,13 @@
       "firstName": "lola",
       "lastName": "Richie",
       "crimeType": "blackmail",
-      "goodBehaviour": true,
+      "goodBehaviour": false,
       "parole": false,
       "gangMember": true,
       "nickName": "Oldie",
       "crimeDetails": "Postman read peoples mail and blackmail them",
       "picture": "assets/prisoner-img/prisoner-10.jpeg",
-      "blockCell": 110
+      "blockCell": "110"
     }
   ]
 }
