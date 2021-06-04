@@ -24,7 +24,6 @@ function renderPrisonerList() {
   for (let i = 0; i < state.prisoners.length; i++) {
     let prisoner = state.prisoners[i];
     let index = [i];
-    console.log(index);
 
     renderPrisoner(prisoner, index);
   }
@@ -80,6 +79,7 @@ function renderPrisoner(prisoner, index) {
 
   const blockCell = document.createElement("span");
   blockCell.setAttribute("class", "block-sell");
+  // if (index === underfined) console.log("index underfined");
   blockCell.innerText = `Block ${state.block[index].blockId} Cell: ${prisoner.blockCell}`;
   prisonerArticle.append(blockCell);
 
@@ -100,7 +100,6 @@ function renderPrisoner(prisoner, index) {
 
 // RENDER PRISONER EDIT FORM
 function editPrisonerForm(prisoner) {
-  console.log(prisoner);
   const displayContent = document.querySelector(".display-content");
   displayContent.setAttribute(
     "class",
@@ -314,6 +313,7 @@ function editPrisonerForm(prisoner) {
   submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     updatePrisoner();
+    displayContent.innerHTML = "";
   });
 
   //Update Array and JSON
@@ -367,7 +367,11 @@ function editPrisonerForm(prisoner) {
             return response.json();
           })
           .then(function (data) {
-            state.prisoners.push(data);
+            let indexOfblock = state.block.findIndex(function (index) {
+              return prisoner.Id === index.prisonerId;
+            });
+            state.block.splice(indexOfblock, 1);
+            state.block.push(data);
           });
       });
   }
@@ -390,6 +394,7 @@ function editPrisonerForm(prisoner) {
 }
 
 function renderAdmission() {
+  const displayContent = document.querySelector(".display-content");
   const admissionBtn = document.querySelector(".admissions-li");
 
   admissionBtn.addEventListener("click", function () {
@@ -605,6 +610,7 @@ function renderAdmissionForm() {
 
   admissionBtn.addEventListener("click", function (event) {
     event.preventDefault();
+    displayContent.innerHTML = "";
 
     fetch(`http://localhost:3000/prisoners`, {
       method: "POST",
@@ -628,6 +634,8 @@ function renderAdmissionForm() {
         return response.json();
       })
       .then(function (data) {
+        state.prisoners.push(data);
+
         fetch("http://localhost:3000/block", {
           method: "POST",
           headers: {
@@ -642,7 +650,8 @@ function renderAdmissionForm() {
             return response.json();
           })
           .then(function (data) {
-            state.prisoners.push(data);
+            console.log(data);
+            state.block.push(data);
           });
       });
   });
