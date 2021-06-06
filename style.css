@@ -312,13 +312,19 @@ footer {
 .crimes-list-item:hover,
 .option-list-item:hover {
   background-color: white;
+  transform: scale(1.05);
 }
 .delete-btn:hover {
   background-color: red;
 }
 .prisoner-article:hover {
   border-color: aqua;
+  transform: scale(1.02);
 }
+.crimes-list-item:hover {
+  transform: scale(1.2);
+}
+
 .main-h2:hover,
 .main-h1:hover {
   color: darkgreen;
