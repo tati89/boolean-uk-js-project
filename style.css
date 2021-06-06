@@ -102,7 +102,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  width: 225px;
+  width: 224px;
   background-color: rgb(236, 236, 236);
 }
 
@@ -113,9 +113,10 @@ body {
 }
 
 .prisoner-img {
-  width: 200px;
-  height: 200px;
+  width: 202px;
+  height: 202px;
   object-fit: cover;
+  border: 1px solid black;
 }
 
 .crime-title {
@@ -147,13 +148,28 @@ body {
 .form-article {
   max-width: 500px;
   margin-top: 10px;
-  border: 1px solid black;
+  border: 3px solid black;
   padding: 10px;
   background-color: rgb(236, 236, 236);
+}
+.edit-form-article {
+  display: grid;
+  grid-template:
+    "edit-form-title-h1 edit-form-title-h1" auto
+    "edit-form edit-form-picture-div" auto
+    "button-div button-div" auto/
+    auto auto;
+  grid-gap: 1ch;
+  max-width: 1000px;
+}
+
+.button-div {
+  grid-area: button-div;
 }
 
 /* Form starts */
 .edit-form {
+  grid-area: edit-form;
   display: grid;
   grid-gap: 15px;
 }
@@ -163,6 +179,18 @@ body {
   text-align: center;
   margin: 0;
   padding: 5px;
+}
+.edit-form-title-h1 {
+  grid-area: edit-form-title-h1;
+}
+.edit-form-picture-div {
+  grid-area: edit-form-picture-div;
+}
+.edit-form-pic {
+  width: 400px;
+  max-height: 430px;
+  object-fit: cover;
+  border: 1px solid black;
 }
 
 .first-name-div,
@@ -189,6 +217,8 @@ label {
 .picture-label,
 .crime-details-label {
   font-size: 1.3rem;
+  margin-bottom: -1.5ch;
+  text-align: left;
 }
 
 .button-div {
@@ -239,6 +269,14 @@ footer {
   .hero-img {
     width: 400px;
   }
+  .edit-form-article {
+    grid-template:
+      "edit-form-title-h1" auto
+      "edit-form-picture-div" auto
+      "edit-form" auto
+      "button-div" auto/
+      auto;
+  }
   .signature {
     padding-left: 0px;
   }
@@ -263,4 +301,26 @@ footer {
   .hero-img {
     width: 300px;
   }
+  .edit-form-pic {
+    max-width: 300px;
+  }
+}
+.prisoner-article:hover,
+.admission-btn:hover,
+.edit-btn:hover,
+.submit-btn:hover,
+.crimes-list-item:hover,
+.option-list-item:hover {
+  background-color: white;
+}
+.delete-btn:hover {
+  background-color: red;
+}
+.prisoner-article:hover {
+  border-color: aqua;
+}
+.main-h2:hover,
+.main-h1:hover {
+  color: darkgreen;
+  border-color: darkgreen;
 }

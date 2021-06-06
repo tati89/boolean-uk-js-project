@@ -108,7 +108,7 @@ function editPrisonerForm(prisoner) {
   displayContent.innerHTML = "";
 
   const formArticle = document.createElement("article");
-  formArticle.setAttribute("class", "form-article");
+  formArticle.setAttribute("class", "form-article edit-form-article");
   displayContent.append(formArticle);
 
   //Form
@@ -118,9 +118,9 @@ function editPrisonerForm(prisoner) {
 
   //Edit prisoner h1
   const h1El = document.createElement("h1");
-  h1El.setAttribute("class", "form-title");
-  h1El.innerText = "Edit Prisoner";
-  form.append(h1El);
+  h1El.setAttribute("class", "form-title edit-form-title-h1");
+  h1El.innerText = "Edit Prisoner: #" + prisoner.id;
+  formArticle.append(h1El);
 
   //First name label + input inside div
   const firstNameDiv = document.createElement("div");
@@ -299,10 +299,23 @@ function editPrisonerForm(prisoner) {
   blockcellInput.setAttribute("value", prisoner.blockCell);
   blockCellDiv.append(blockcellInput);
 
+  // CREATE A DIV TO DISPLAY PICTURE
+  const pictureDiv = document.createElement("div");
+  pictureDiv.setAttribute("class", "edit-form-picture-div");
+  formArticle.append(pictureDiv);
+
+
+  // DISPLAY PICTURE
+  let editFormPicture = document.createElement("img")
+  editFormPicture.setAttribute("class","edit-form-pic")
+  editFormPicture.setAttribute("src",prisoner.picture)
+  editFormPicture.setAttribute("alt",prisoner.id)
+  pictureDiv.append(editFormPicture)
+
   //div with submit and delete button
   const buttonDiv = document.createElement("div");
   buttonDiv.setAttribute("class", "button-div");
-  form.append(buttonDiv);
+  formArticle.append(buttonDiv);
 
   //submit button
   const submitBtn = document.createElement("button");
